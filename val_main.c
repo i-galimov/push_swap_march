@@ -20,6 +20,46 @@ typedef struct s_all
 	int				num;
 }			t_all;
 
+// functions
+void    ft_arg_error(void);
+int ft_atoi(const char *str);
+int   ft_check_dublicate(char **argv);
+int    ft_check_overflow(char **argv);
+int    ft_check_sorted(char **argv);
+int    ft_check_input(char **argv);
+void	ft_sa(t_list	**a);
+void	ft_sb(t_list	**b);
+void	ft_ss(t_list	**a, t_list	**b);
+void	ft_pb(t_list **a, t_list **b);
+void	ft_pa(t_list **a, t_list **b);
+void	ft_rra(t_list **a);
+void	ft_rrb(t_list **b);
+void	ft_rrr(t_list **a, t_list **b);
+void	ft_ra(t_list **a);
+void	ft_rb(t_list **b);
+void	ft_rr(t_list **a, t_list **b);
+int    count_list(t_list *lst);
+void    define_index(t_list **a, int *arr);
+void    ft_swap(int    *a, int *b);
+void    sort_array(int argc, char **argv, t_list **a);
+int	push_to_sort(t_all *s, int flag);
+int	ft_next_num(t_all *s);
+void	sort_stack_b(t_all *s, int flag);
+void	sort_many_num(t_all *s);
+static void    case_sort1(t_list **a);
+static void    case_sort2(t_list **a);
+static void    case_sort3(t_list **a);
+static void    case_sort4(t_list **a);
+void    sort_by_three(t_list **a);
+int    ft_find_min(t_list **a);
+void    ft_moves(t_list **a, t_list **b, int argc);
+void    sort_by_five(t_list **a, t_list **b, int argc);
+t_list	*ft_lstnew(int value);
+void    free_list(t_list *head);
+int	len_list(t_list *a);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void    type_sort(t_list **a, t_list **b, t_all *s, int argc);
+
 // errors.c
 void    ft_arg_error(void)
 {
@@ -439,7 +479,7 @@ void	sort_stack_b(t_all *s, int flag)
 	{
 		i = 0;
 		flag++;
-		k = count(s->b);
+		k = len_list(s->b);
 		mid = k / 2 + s->next + 2;
 		while (s->b && i++ < k)
 		{
@@ -590,7 +630,7 @@ void    create_list(t_list **head, char **argv)
         ft_lstadd_back(head, ft_lstnew(ft_atoi(argv[i])));
 }
 
-t_list	*ft_lstnew(void *value)
+t_list	*ft_lstnew(int value)
 {
 	t_list	*lst;
 
@@ -602,11 +642,11 @@ t_list	*ft_lstnew(void *value)
 	return (lst);
 }
 
-void    free_list(t_all **head)
+void    free_list(t_list *head)
 {
-    if ((*head)->next != NULL)
-        free_list(&(*head)->next);
-    free(*head);
+    if (head->next != NULL)
+        free_list(head->next);
+    free(head);
 }
 
 int	len_list(t_list *a)
@@ -620,6 +660,21 @@ int	len_list(t_list *a)
 		a = a->next;
 	}
 	return (n);
+}
+
+void	ft_lstadd_back(t_list **lst, t_list *new)
+{
+	t_list	*list;
+
+	if (*lst == NULL)
+		*lst = new;
+	else
+	{
+		list = *lst;
+		while (list->next != NULL)
+			list = list->next;
+		list->next = new;
+	}
 }
 // push_swap.c
 
@@ -646,9 +701,9 @@ int	main(int argc, char **argv)
         ft_arg_error();
 	if (ft_check_input(argv) == 1)
         ft_arg_error();
-    create_list(s.a, argv);
-    sort_array(argc, argv, s.a);
-    type_sort(s.a, s.a, s, argc);
+    create_list(&s.a, argv);
+    sort_array(argc, argv, &s.a);
+    type_sort(&s.a, &s.a, &s, argc);
     free_list(s.a);
 
     return (0);
