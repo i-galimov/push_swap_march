@@ -6,35 +6,13 @@ void	save_value(t_list **a, t_all *s)
 	int		*res;
 
 	res = s->arg;
-    // (*a) = ft_lstnew(res[0]);
-    // i = 1;
 	i = 0;
     while (i < s->len)
 	{
         ft_lstadd_back(a, ft_lstnew(res[i]));
 		i++;
 	}
-	// t_list	*tmp;
-	// tmp = *a;
-	// while (tmp->next != NULL)
-	// {
-	// 	printf("val = %d\n", tmp->value);
-	// 	printf("ind = %d\n", tmp->index);
-	// 	tmp = tmp->next;
-	// }
-	// printf("%d\n", tmp->value);
-	// printf("ind = %d\n", tmp->index);
 }
-
-// void    create_list(t_list **head, char **argv)
-// {
-//     int    i;
-
-//     i = 1;
-//     (*head) = ft_lstnew(ft_atoi(argv[1]));
-//     while (argv[++i])
-//         ft_lstadd_back(head, ft_lstnew(ft_atoi(argv[i])));
-// }
 
 void	define_index(t_list **a, int *arr, t_all *s)
 {
@@ -93,18 +71,10 @@ void	sort_array(t_list **a, t_all *s)
 			j++;
 		}
 		i++;
-	}
-
-	// int y = 0;
-	// while(y < s->len)
-	// {
-	// 	printf("arr[y] = %d\n", arr[y]);
-	// 	y++;
-	// }
-	
+	}	
 	define_index(a, arr, s);
 	free(arr);
-
+	// debug
 	t_list	*tmp;
 	tmp = *a;
 	while (tmp->next != NULL)
@@ -115,4 +85,5 @@ void	sort_array(t_list **a, t_all *s)
 	}
 	printf("val = %d\n", tmp->value);
 	printf("ind = %d\n", tmp->index);
+	// debug
 }

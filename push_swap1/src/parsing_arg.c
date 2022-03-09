@@ -1,9 +1,9 @@
 #include "push_swap.h"
 
-char    *ft_arg_str(char **argv)
+char	*ft_arg_str(char **argv)
 {
-	int     i;
-	char    *res;
+	int		i;
+	char	*res;
 
 	i = 1;
 	res = ft_strdup(argv[i]);
@@ -16,8 +16,7 @@ char    *ft_arg_str(char **argv)
 	return (res);
 }
 
-
-void    ft_check_sorted(t_all *s)
+void	ft_check_sorted(t_all *s)
 {
 
 	int    i;
@@ -30,10 +29,9 @@ void    ft_check_sorted(t_all *s)
 		i++;
 	}
 	ft_arg_error();
-	printf("ft_check_sorted\n");
 }
 
-void    ft_check_dublicate(int *res, int *len)
+void	ft_check_dublicate(int *res, int *len)
 {
     int i;
     int j;
@@ -79,8 +77,10 @@ void	ft_arg_conv(int len, char **argv, t_all *s)
 	s->arg = res;
 	free(strs);
 	free(arg);
+	// debug
 	for (int j = 0; j < i; j++)
 		printf("[%d] --> %d\n", j ,s->arg[j]);
+	// debug
 	ft_check_sorted(s);
 	ft_check_dublicate(s->arg, &(s->len));
 }

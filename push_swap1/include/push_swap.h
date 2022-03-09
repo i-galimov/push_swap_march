@@ -31,7 +31,7 @@ void	free_list(t_list *head);
 int		len_list(t_list *a);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 // main.c
-void	type_sort(t_list **a, t_all *s);
+void	type_sort(t_list **a, t_list **b, t_all *s);
 int		main(int argc, char **argv);
 // reverse_rotate.c
 void	ft_rra(t_list **a);
@@ -72,5 +72,12 @@ void	save_value(t_list **a, t_all *s);
 void	define_index(t_list **a, int *arr, t_all *s);
 void	ft_swap(int *a, int *b);
 void	sort_array(t_list **a, t_all *s);
+
+// sort5.c
+int		ft_find_min(t_list **a);
+void	ft_move4(t_list **a, t_list **b);
+void	ft_sort4(t_list **a, t_list **b);
+void	ft_move5(t_list **a, t_list **b);
+void	ft_sort5(t_list **a, t_list **b);
 
 #endif
