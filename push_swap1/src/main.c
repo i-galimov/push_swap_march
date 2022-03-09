@@ -4,7 +4,7 @@ void	type_sort(t_list **a, t_list **b, t_all *s)
 {
 	if (s->len < 2)
 		ft_arg_error();
-	if (s->len == 3)
+	if (s->len == 2)
 		ft_sa(a);
 	if (s->len == 3)
 		ft_sort3(a);
