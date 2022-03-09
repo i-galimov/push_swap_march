@@ -25,6 +25,7 @@ SRC						:=	list_ops.c \
 							sx-px.c \
 							sort_array.c \
 							sort5.c \
+							sort_all.c \
 							utils.c 
 
 OBJ						:=	$(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.c=.o)))

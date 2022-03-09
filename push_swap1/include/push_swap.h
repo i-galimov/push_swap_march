@@ -61,23 +61,26 @@ void	ft_arg_error(void);
 char	*ft_arg_str(char **argv);
 void	ft_arg_conv(int len, char **argv, t_all *s);
 void	ft_check_sorted(t_all *s);
-void    ft_check_dublicate(int *res, int *len);
+void	ft_check_dublicate(int *res, int *len);
 
 void	ft_arg_error1(void);
 void	ft_arg_error2(void);
 void	ft_arg_error3(void);
-
 // sort_array.c
 void	save_value(t_list **a, t_all *s);
 void	define_index(t_list **a, int *arr, t_all *s);
 void	ft_swap(int *a, int *b);
 void	sort_array(t_list **a, t_all *s);
-
 // sort5.c
 int		ft_find_min(t_list **a);
 void	ft_move4(t_list **a, t_list **b);
 void	ft_sort4(t_list **a, t_list **b);
 void	ft_move5(t_list **a, t_list **b);
 void	ft_sort5(t_list **a, t_list **b);
+// sort_all.c
+int		push_to_sort(t_all *s, int flag);
+int		ft_next_num(t_all *s);
+void	sort_stack_b(t_all *s, int flag);
+void	sort_all(t_all *s);
 
 #endif

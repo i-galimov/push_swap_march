@@ -12,8 +12,8 @@ void	type_sort(t_list **a, t_list **b, t_all *s)
 		ft_sort4(a, b);
 	if (s->len == 5)
 		ft_sort5(a, b);
-	// if (argc > 6)
-	//     sort_many_num(s);
+	if (s->len > 5)
+		sort_all(s);
 }
 
 int	main(int argc, char **argv)
