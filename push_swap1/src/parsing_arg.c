@@ -78,8 +78,8 @@ void	ft_arg_conv(int len, char **argv, t_all *s)
 	free(strs);
 	free(arg);
 	// debug
-	for (int j = 0; j < i; j++)
-		printf("[%d] --> %d\n", j ,s->arg[j]);
+	// for (int j = 0; j < i; j++)
+	// 	printf("[%d] --> %d\n", j ,s->arg[j]);
 	// debug
 	ft_check_sorted(s);
 	ft_check_dublicate(s->arg, &(s->len));

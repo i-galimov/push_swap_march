@@ -82,5 +82,8 @@ int		push_to_sort(t_all *s, int flag);
 int		ft_next_num(t_all *s);
 void	sort_stack_b(t_all *s, int flag);
 void	sort_all(t_all *s);
+// list_ops.2
+int		check_value(t_list *list, int *n, int value);
+t_list	*get_last(t_list *begin_list, int data, int *n, int flag);
 
 #endif

@@ -75,15 +75,15 @@ void	sort_array(t_list **a, t_all *s)
 	define_index(a, arr, s);
 	free(arr);
 	// debug
-	t_list	*tmp;
-	tmp = *a;
-	while (tmp->next != NULL)
-	{
-		printf("val = %d\n", tmp->value);
-		printf("ind = %d\n\n", tmp->index);
-		tmp = tmp->next;
-	}
-	printf("val = %d\n", tmp->value);
-	printf("ind = %d\n", tmp->index);
+	// t_list	*tmp;
+	// tmp = *a;
+	// while (tmp->next != NULL)
+	// {
+	// 	printf("val = %d\n", tmp->value);
+	// 	printf("ind = %d\n\n", tmp->index);
+	// 	tmp = tmp->next;
+	// }
+	// printf("val = %d\n", tmp->value);
+	// printf("ind = %d\n", tmp->index);
 	// debug
 }

@@ -30,14 +30,14 @@ int	main(int argc, char **argv)
 	type_sort(&s.a, &s.b, &s);
 
 	// debug
-	t_list	*tmp;
-	tmp = s.a;
-	while (tmp->next != NULL)
-	{
-		printf("res = %d\n", tmp->value);
-		tmp = tmp->next;
-	}
-	printf("res = %d\n", tmp->value);
+	// t_list	*tmp;
+	// tmp = s.a;
+	// while (tmp->next != NULL)
+	// {
+	// 	printf("res = %d\n", tmp->value);
+	// 	tmp = tmp->next;
+	// }
+	// printf("res = %d\n", tmp->value);
 	// printf("%d\n", s.len);
 	// debug
 	

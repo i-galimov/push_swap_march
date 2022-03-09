@@ -15,22 +15,22 @@ int	ft_next_num(t_all *s)
 {
 	if (s->a->index == s->next)
 		return (push_to_sort(s, 0));
-	// if (len_list(s->b) > 0 && s->b->index == s->next)
-	// 	return (push_to_sort(s, 1));
-	// if (len_list(s->b) >= 3 && get_last(s->b, 0, 0, 0)->index == s->next)
-	// {
-	// 	ft_rrb(&s->b);
-	// 	return (push_to_sort(s, 1));
-	// }
-	// if (len_list(s->b) > 1 && s->b->next->index == s->next + 1
-	// 	&& s->a->next->index == s->next)
-	// {
-	// 	ft_ss(&s->a, &s->b);
-	// 	s->a->flag = -1;
-	// 	ft_ra(&s->a);
-	// 	s->next++;
-	// 	return (push_to_sort(s, 1));
-	// }
+	if (len_list(s->b) > 0 && s->b->index == s->next)
+		return (push_to_sort(s, 1));
+	if (len_list(s->b) >= 3 && get_last(s->b, 0, 0, 0)->index == s->next)
+	{
+		ft_rrb(&s->b);
+		return (push_to_sort(s, 1));
+	}
+	if (len_list(s->b) > 1 && s->b->next->index == s->next + 1
+		&& s->a->next->index == s->next)
+	{
+		ft_ss(&s->a, &s->b);
+		s->a->flag = -1;
+		ft_ra(&s->a);
+		s->next++;
+		return (push_to_sort(s, 1));
+	}
 	return (0);
 }
 
